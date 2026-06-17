@@ -1,0 +1,71 @@
+.hero {
+  padding: 4rem 0;
+  text-align: center;
+  background-color: #f1f5f9;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.hero p {
+  font-size: 1.15rem;
+  color: var(--text-color);
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.services {
+  padding: 4rem 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: var(--primary-color);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.services-grid .card {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+}
+
+.services-grid .card h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.contact {
+  padding: 3rem;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  margin-bottom: 4rem;
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+
+.contact h2 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.contact p {
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
