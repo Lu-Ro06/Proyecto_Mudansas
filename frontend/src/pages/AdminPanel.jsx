@@ -47,8 +47,8 @@ const AdminPanel = () => {
     const fetchData = async () => {
         try {
             const [resProv, resSol] = await Promise.all([
-                fetch(`${import.meta.env.VITE_API_URL || '${import.meta.env.VITE_API_URL || 'http://localhost:5000'}'}/api/admin/proveedores`),
-                fetch(`${import.meta.env.VITE_API_URL || '${import.meta.env.VITE_API_URL || 'http://localhost:5000'}'}/api/admin/solicitudes`)
+                fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/admin/proveedores`),
+                fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/admin/solicitudes`)
             ]);
             const dataProv = await resProv.json();
             const dataSol = await resSol.json();
@@ -63,7 +63,7 @@ const AdminPanel = () => {
         e.preventDefault();
         setMessage('');
         try {
-            const response = await fetch(`${import.meta.env.VITE_API_URL || '${import.meta.env.VITE_API_URL || 'http://localhost:5000'}'}/api/admin/create_user`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/admin/create_user`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ nombre, correo, contrasena, rol })
