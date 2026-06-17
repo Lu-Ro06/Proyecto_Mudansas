@@ -20,7 +20,7 @@ const ProfileModal = ({ user, onClose, onUpdate }) => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await fetch(`http://localhost:5000${endpoint}`);
+        const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${endpoint}`);
         const data = await response.json();
         if (data.success) {
           setFormData({
@@ -50,7 +50,7 @@ const ProfileModal = ({ user, onClose, onUpdate }) => {
   const handleSave = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:5000${endpoint}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}${endpoint}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)

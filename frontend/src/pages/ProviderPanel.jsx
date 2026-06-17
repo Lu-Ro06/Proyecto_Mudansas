@@ -42,7 +42,7 @@ const ProviderPanel = () => {
 
     const fetchSolicitudes = async (providerId) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/proveedor/${providerId}/solicitudes`);
+            const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/proveedor/${providerId}/solicitudes`);
             const data = await response.json();
             if (data.success) {
                 setSolicitudes(data.solicitudes);
@@ -54,7 +54,7 @@ const ProviderPanel = () => {
 
     const fetchVehiculos = async (providerId) => {
         try {
-            const response = await fetch(`http://localhost:5000/api/proveedor/${providerId}/vehiculos`);
+            const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/proveedor/${providerId}/vehiculos`);
             const data = await response.json();
             if (data.success) {
                 setVehiculos(data.vehiculos);
@@ -68,7 +68,7 @@ const ProviderPanel = () => {
         e.preventDefault();
         setVehiculoMessage('');
         try {
-            const response = await fetch(`http://localhost:5000/api/proveedor/${user.id}/vehiculos`, {
+            const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/proveedor/${user.id}/vehiculos`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(nuevoVehiculo)
@@ -96,7 +96,7 @@ const ProviderPanel = () => {
             onConfirm: async () => {
                 closeAlert();
                 try {
-                    const response = await fetch(`http://localhost:5000/api/vehiculos/${id_vehiculo}`, {
+                    const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/vehiculos/${id_vehiculo}`, {
                         method: 'DELETE'
                     });
                     const data = await response.json();
@@ -126,7 +126,7 @@ const ProviderPanel = () => {
             onConfirm: async () => {
                 closeAlert();
                 try {
-                    const response = await fetch(`http://localhost:5000/api/solicitudes/${id_solicitud}/completar`, {
+                    const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/solicitudes/${id_solicitud}/completar`, {
                         method: 'PUT'
                     });
                     const data = await response.json();
